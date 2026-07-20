@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mobile_nav{
+    @apply fixed top-16 right-0 left-12 bg-white bg-opacity-80 w-full h-1/2
+}
+
+.mobile_nav li{
+    @apply w-full h-full text-center border-b-4
+}
+
+.perspective {
+  perspective: 1000px;
+}
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+
+
+
+
