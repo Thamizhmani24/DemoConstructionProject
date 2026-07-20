@@ -72,8 +72,7 @@ construction_project/
    ```bash
    npm run start
 
-## 📸 GitHub hosting
-https://pravin2506.github.io/Demo-Construction-App/
+
 
 ## Author
-Created by Pravin — using React & TailwindCSS.
+Created by Thamizhmani — using React & TailwindCSS.
