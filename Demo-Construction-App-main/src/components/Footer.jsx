@@ -1,7 +1,7 @@
 import { FaWhatsapp, FaTwitter, FaFacebookF, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import bgImage from "../assets/FooterImage/footer-bg.png";
 import workerImg from "../assets/FooterImage/worker.png";
-import logo from "../assets/logo.png";
+
 import thumb1 from "../assets/FooterImage/thumb1.png";
 import thumb2 from "../assets/FooterImage/thumb2.png";
 import thumb3 from "../assets/FooterImage/thumb3.png";
