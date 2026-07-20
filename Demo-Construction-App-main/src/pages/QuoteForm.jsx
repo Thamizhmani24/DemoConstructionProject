@@ -1,85 +1,92 @@
 import React from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const QuoteForm = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-50">
-      <div className="bg-white shadow-lg border border-gray-200 rounded-md p-8 w-[600px]">
-        <h2 className="text-xl font-bold mb-6">GET A FREE ESTIMATE</h2>
+    <>
+      <Navbar />
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--background)', paddingTop: '100px', paddingBottom: '50px' }}>
+        <div className="card animate-fade-up" style={{ width: '100%', maxWidth: '700px', margin: '0 20px', padding: '50px 40px' }}>
+          <h2 className="section-title" style={{ fontSize: '2rem', marginBottom: '30px', textAlign: 'center', display: 'block' }}>GET A FREE ESTIMATE</h2>
 
-        <form className="grid grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Name<span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-gray-100"
-            />
-          </div>
+          <form style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <label style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--secondary)' }}>
+                Name<span style={{ color: '#ef4444' }}>*</span>
+              </label>
+              <input
+                type="text"
+                style={{ padding: '12px 16px', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', background: 'var(--surface)', fontSize: '1rem', outline: 'none', transition: 'var(--transition)' }}
+                onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
+                onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
+              />
+            </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Mobile<span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-gray-100"
-            />
-          </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <label style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--secondary)' }}>
+                Mobile<span style={{ color: '#ef4444' }}>*</span>
+              </label>
+              <input
+                type="text"
+                style={{ padding: '12px 16px', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', background: 'var(--surface)', fontSize: '1rem', outline: 'none', transition: 'var(--transition)' }}
+                onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
+                onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
+              />
+            </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Email<span className="text-red-500">*</span>
-            </label>
-            <input
-              type="email"
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-gray-100"
-            />
-          </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <label style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--secondary)' }}>
+                Email<span style={{ color: '#ef4444' }}>*</span>
+              </label>
+              <input
+                type="email"
+                style={{ padding: '12px 16px', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', background: 'var(--surface)', fontSize: '1rem', outline: 'none', transition: 'var(--transition)' }}
+                onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
+                onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
+              />
+            </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Plot Location
-            </label>
-            <select className="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-gray-100">
-              <option>Select location</option>
-              <option>Location 1</option>
-              <option>Location 2</option>
-            </select>
-          </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <label style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--secondary)' }}>
+                Plot Location
+              </label>
+              <select 
+                style={{ padding: '12px 16px', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', background: 'var(--surface)', fontSize: '1rem', outline: 'none', transition: 'var(--transition)', appearance: 'none' }}
+                onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
+                onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
+              >
+                <option>Select location</option>
+                <option>Location 1</option>
+                <option>Location 2</option>
+              </select>
+            </div>
 
-          <div className="col-span-2">
-            <label className="block text-sm font-medium text-gray-700">
-              Construction Requirements
-            </label>
-            <textarea
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-gray-100"
-              rows="3"
-            ></textarea>
-          </div>
+            <div style={{ gridColumn: 'span 2', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <label style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--secondary)' }}>
+                Construction Requirements
+              </label>
+              <textarea
+                rows="4"
+                style={{ padding: '12px 16px', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', background: 'var(--surface)', fontSize: '1rem', outline: 'none', transition: 'var(--transition)', resize: 'vertical' }}
+                onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
+                onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
+              ></textarea>
+            </div>
 
-          {/* Reset button */}
-          <div className="col-span-2">
-            <button
-              type="reset"
-              className="w-full py-2 border border-gray-300 rounded-md text-gray-600 hover:bg-gray-100"
-            >
-              RESET
-            </button>
-          </div>
-
-          {/* Submit button */}
-          <div className="col-span-2">
-            <button
-              type="submit"
-              className="w-full py-3 bg-yellow-400 text-white font-bold rounded-md hover:bg-yellow-500"
-            >
-              GET A FREE QUOTE NOW
-            </button>
-          </div>
-        </form>
+            <div style={{ gridColumn: 'span 2', display: 'flex', gap: '16px', marginTop: '10px' }}>
+              <button type="reset" className="btn-outline" style={{ flex: 1, padding: '14px' }}>
+                RESET
+              </button>
+              <button type="submit" className="btn-primary" style={{ flex: 2, padding: '14px' }}>
+                GET A FREE QUOTE NOW
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

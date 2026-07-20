@@ -10,41 +10,57 @@ const RecentWorks = () => {
   const images = [image1, image2, image3, image4, image5, image6];
 
   return (
-    <section className="mt-12">
+    <section className="section-padding">
+      <div className="container">
+        <div className="text-center">
+          <h2 className="section-title">Our Recent Works</h2>
+          <p className="section-subtitle">
+            Experience the essence of thoughtful construction in Chennai—our
+            work speaks volumes about who we are and what we build.
+          </p>
+        </div>
 
-      <div className="text-center mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800">
-          Our Recent Works
-        </h2>
-
-        <div className="w-32 h-0.5 bg-yellow-400 mx-auto my-4"></div>
-
-        <p className="text-gray-600 max-w-2xl mx-auto text-l md:text-xl">
-          Experience the essence of thoughtful construction in Chennai—our
-          work speaks volumes about who we are and what we build.
-        </p>
-      </div>
-
-
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
-        {images.map((src, index) => {
-
-          const roundedClass =
-            index >= 3 ? "rounded-b-full" : "rounded-t-full";
-
-          return (
-            <div
-              key={index}
-              className={`w-60 h-60 overflow-hidden ${roundedClass} shadow-md bg-white hover:shadow-xl transition-shadow`}
-            >
-              <img
-                src={src}
-                alt={`Project ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          );
-        })}
+        <div className="grid-3">
+          {images.map((src, index) => {
+            const isTopRounded = index < 3;
+            return (
+              <div
+                key={index}
+                style={{
+                  height: '300px',
+                  borderRadius: isTopRounded ? '150px 150px 10px 10px' : '10px 10px 150px 150px',
+                  overflow: 'hidden',
+                  boxShadow: 'var(--shadow-md)',
+                  transition: 'var(--transition)',
+                  cursor: 'pointer',
+                  margin: '0 auto',
+                  width: '90%',
+                  maxWidth: '300px'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-10px)';
+                  e.currentTarget.style.boxShadow = 'var(--shadow-lg)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+                }}
+              >
+                <img
+                  src={src}
+                  alt={`Project ${index + 1}`}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'var(--transition)' }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.1)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
